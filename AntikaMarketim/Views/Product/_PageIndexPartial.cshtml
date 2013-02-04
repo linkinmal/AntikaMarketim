@@ -1,0 +1,52 @@
+﻿@using AntikaMarketim.ViewModels
+@model PaginatedList<ProductListViewModel>
+
+<div class="pageindex">
+    @if (Model.HasPreviousPage)
+    {
+        <a class="previousPage" href= @ViewBag["UrlWithoutPageIndex"] + "&PageIndex=" + @Model.PageIndex - 1>
+            &#60&#60Önceki
+        </a>
+    }
+    else
+    {
+        <span style="color:Gray;">
+            &#60&#60Önceki
+        </span>
+    }
+
+    <input id="pageinput" type="text" value=@Model.PageIndex+1/> / @Model.TotalPages
+    
+    @if (Model.HasNextPage)
+    {
+        <a class="nextPage" href=@ViewBag["UrlWithoutPageIndex"] + "&PageIndex=" + @Model.PageIndex + 1>
+            Sonraki&#62&#62
+        </a>
+    }
+    else
+    {
+        <span style="color:Gray;">
+            Sonraki&#62&#62
+        </span>
+    }
+</div>
+
+<script type="text/javascript">   // KONTROL ET, IKI TANE BIRDEN CIKIYORSA SOURCE'A, WELL, AYRI DOSYA YAPMAYI FALAN DENE I DONT KNOW
+    // only allow numerical input
+    $('#pageinput').keypress(function (evt) { return num(evt); });
+    function num(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode == 13) {
+            var pageinput = parseInt($('#pageinput').val().trim());
+            if (pageinput == 0)
+            {
+                return false;
+            }
+            location.href = @ViewBag["UrlWithoutPageIndex"] + "&PageIndex=" + pageinput;
+            return true;
+        }
+        if (charCode < 48 || charCode > 57)
+            return false;
+        return true;
+    }
+</script>

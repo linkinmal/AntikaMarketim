@@ -1,0 +1,52 @@
+﻿@using AntikaMarketim.ViewModels;
+@model ProductDetailViewModel
+
+<h1>@Model.Product.Title</h1>
+
+@Html.HiddenFor(m => m.Product.Id, new { id="ProductId" })
+@Html.HiddenFor(m => m.UnitPrice, new { id="UnitPrice" })
+
+<div id="categories">
+    @Html.Action("MainCategories")
+</div>
+
+
+<ul id="categorynavigation">
+    @foreach (var item in Model.Categories)
+    {
+        <li>@Html.ActionLink(item.Title, "ListByCategory", new { CategoryId = item.Id, PageIndex = 0, PageSize = AntikaMarketim.Globals.DEFAULT_PAGESIZE })</li>
+    }
+</ul>
+
+
+<div id="imagepanel">
+    <div id="img200">
+
+    </div>
+
+    <div id="otherimages">
+
+    </div>
+</div>
+
+<div id="pricepanel">
+    <div id="price">
+        <span>KDV Dahil Fiyatı:</span>
+        <span>₺ @Model.UnitPrice</span>
+    </div>
+
+    <img id="addtocart" class="button" title="Ürünü Sepetinize Ekleyin" alt="Sepete Ekle" src="@Url.Content("~/Content/SiteImages/sepet.png")"/>
+    <img class="loading" alt="İşleminiz Yapılıyor.." src="@Url.Content("~/Content/SiteImages/loading.gif")" />
+</div>
+
+<div id="infopanel">
+    <ul>
+        <li>Ürün Özellikleri</li>
+    </ul>
+
+    <div id="description">
+        @Model.Product.Description.Content
+    </div>
+</div>
+
+<script src="@Url.Content("~/Scripts/Product/Details.js")" type="text/javascript"></script>

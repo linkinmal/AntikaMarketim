@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc3fa860d68848f786ee23676d898dcf" Name="Diagram1" ZoomLevel="86" >
+        <EntityTypeShape EntityType="DataModel.Product" Width="1.5" PointX="11" PointY="0.875" />
+        <EntityTypeShape EntityType="DataModel.Tag" Width="1.5" PointX="13.25" PointY="2.75" />
+        <EntityTypeShape EntityType="DataModel.Antique" Width="1.5" PointX="11" PointY="5.125" />
+        <InheritanceConnector EntityType="DataModel.Antique" />
+        <EntityTypeShape EntityType="DataModel.Category" Width="1.5" PointX="6" PointY="1" />
+        <AssociationConnector Association="DataModel.ProductCategory" />
+        <EntityTypeShape EntityType="DataModel.Cart" Width="1.5" PointX="16.5" PointY="1" />
+        <EntityTypeShape EntityType="DataModel.AntiqueCart" Width="1.5" PointX="16.5" PointY="4.25" />
+        <InheritanceConnector EntityType="DataModel.AntiqueCart" />
+        <EntityTypeShape EntityType="DataModel.Order" Width="1.5" PointX="19.5" PointY="1.625" />
+        <AssociationConnector Association="DataModel.OrderCart" />
+        <EntityTypeShape EntityType="DataModel.ShippingOption" Width="1.5" PointX="16.875" PointY="7.25" />
+        <EntityTypeShape EntityType="DataModel.OrderStatus" Width="1.5" PointX="22.5" PointY="0.5" />
+        <EntityTypeShape EntityType="DataModel.Address" Width="1.5" PointX="24.625" PointY="5" />
+        <EntityTypeShape EntityType="DataModel.MoneyTransfer" Width="1.875" PointX="31.25" PointY="2" />
+        <EntityTypeShape EntityType="DataModel.Payment" Width="1.5" PointX="30.125" PointY="4.5" />
+        <InheritanceConnector EntityType="DataModel.Payment" />
+        <EntityTypeShape EntityType="DataModel.Chargeback" Width="1.5" PointX="32.75" PointY="4.5" />
+        <InheritanceConnector EntityType="DataModel.Chargeback" />
+        <InheritanceConnector EntityType="DataModel.Chargeback" />
+        <EntityTypeShape EntityType="DataModel.WireTransfer" Width="1.5" PointX="29.375" PointY="6.5" />
+        <InheritanceConnector EntityType="DataModel.WireTransfer" />
+        <EntityTypeShape EntityType="DataModel.BankAccount" Width="1.5" PointX="29.375" PointY="8.25" />
+        <AssociationConnector Association="DataModel.ProductTag" />
+        <EntityTypeShape EntityType="DataModel.BillingAddress" Width="1.5" PointX="22" PointY="6.625" IsExpanded="true" />
+        <InheritanceConnector EntityType="DataModel.BillingAddress" />
+        <EntityTypeShape EntityType="DataModel.DeliveryAddress" Width="1.5" PointX="22" PointY="5.25" IsExpanded="true" />
+        <InheritanceConnector EntityType="DataModel.DeliveryAddress" />
+        <EntityTypeShape EntityType="DataModel.Shipping" Width="1.5" PointX="19.5" PointY="5.125" />
+        <AssociationConnector Association="DataModel.OrderOrderStatus" />
+        <AssociationConnector Association="DataModel.ShippingDeliveryAddress" />
+        <AssociationConnector Association="DataModel.ShippingBillingAddress" />
+        <InheritanceConnector EntityType="DataModel.WireTransfer" />
+        <AssociationConnector Association="DataModel.OrderShipping" />
+        <AssociationConnector Association="DataModel.OrderMoneyTransfer" />
+        <AssociationConnector Association="DataModel.CategoryCategory" />
+        <EntityTypeShape EntityType="DataModel.MainCategory" Width="1.5" PointX="3.25" PointY="0.75" />
+        <InheritanceConnector EntityType="DataModel.MainCategory" />
+        <EntityTypeShape EntityType="DataModel.SubCategory" Width="1.5" PointX="3.25" PointY="2.125" />
+        <InheritanceConnector EntityType="DataModel.SubCategory" />
+        <EntityTypeShape EntityType="DataModel.ImageFileName" Width="1.5" PointX="13.25" PointY="0.625" />
+        <AssociationConnector Association="DataModel.ProductImageFileName" />
+        <EntityTypeShape EntityType="DataModel.Description" Width="1.5" PointX="8.25" PointY="3.875" />
+        <AssociationConnector Association="DataModel.ProductDescription" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

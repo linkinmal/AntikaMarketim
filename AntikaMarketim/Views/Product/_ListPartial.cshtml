@@ -1,0 +1,17 @@
+﻿@using AntikaMarketim.ViewModels
+@model PaginatedList<ProductListViewModel>
+
+@Html.Partial("_PageIndexPartial", Model)
+
+<div id="productlist">
+    @foreach (var item in Model.PageItems)
+    {
+        <a id="product" href="@Url.Action("Details", new { ProductId = item.ProductId })">
+            <img class="image" src="@Url.Content("~/Content/ProductImages/200x200/" + item.ImageFileName)" />
+            <span class="producttitle">@item.ProductTitle</span>
+            <span class="price">@item.Price TL</span>
+        </a>
+    }
+</div>
+
+@Html.Partial("_PageIndexPartial", Model)

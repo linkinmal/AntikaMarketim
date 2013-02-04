@@ -1,0 +1,8 @@
+﻿@using AntikaMarketim.ViewModels
+@using AntikaMarketim.Models
+@model PaginatedList<ProductListViewModel>
+
+<h1>@(ViewData["Category"] as Category).Title</h1>
+
+@ViewBag["UrlWithoutPageIndex"] = @Url.Action("ListByCategory", new { CategoryId = (ViewData["Category"] as Category).Id, PageSize = AntikaMarketim.Globals.DEFAULT_PAGESIZE });
+@Html.Partial("_ListPartial", Model)
